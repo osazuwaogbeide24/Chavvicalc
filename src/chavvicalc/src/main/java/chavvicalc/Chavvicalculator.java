@@ -29,7 +29,7 @@ public class Chavvicalculator
     
   private static Character menuGetCommand(Scanner scan) {
     Character command = '_';
-
+    System.out.printf("Enter a command:");
     String rawInput = scan.nextLine();
 
     if (rawInput.length() > 0) {
@@ -39,10 +39,34 @@ public class Chavvicalculator
 
     return command;
   }
-  private static Boolean executeCommand(Scanner scan, Character command) {
+  
+
+private static Boolean executeCommand(Scanner scan, Character command) {
     Boolean success = true;
 
     switch (command) {
+      case 'a':
+        System.out.printf("Enter a number:\t");
+        String xnc =scan.nextLine();
+        try {
+            A=Float.parseFloat(xnc);
+        }
+        catch(NumberFormatException e){
+            System.out.println("ERROR: The value entered is not a floating point number");
+  
+        }
+        break;
+        case 'b':
+        System.out.printf("Enter a number:\t");
+        String xnA =scan.nextLine();
+        try {
+            B=Float.parseFloat(xnA);
+        }
+        catch(NumberFormatException e){
+            System.out.println("ERROR: The value entered is not a floating point number");
+  
+        }
+        break;
       case 'q':
         System.out.println("Thank you for using Chavvi Calc");
         break;
