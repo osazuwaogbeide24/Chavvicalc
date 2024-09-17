@@ -13,9 +13,46 @@ public class Chavvicalculator
     public static void main( String[] args )
     {
 
-        System.out.println( "Hello World!" );
-        printingmenu();
+        Scanner scan = new Scanner(System.in);
+    Character command = '_';
+
+    // loop until user quits
+    while (command != 'q') {
+      printingmenu();
+      command = menuGetCommand(scan);
+
+      executeCommand(scan, command);
     }
+
+    scan.close();
+  }
+    
+  private static Character menuGetCommand(Scanner scan) {
+    Character command = '_';
+
+    String rawInput = scan.nextLine();
+
+    if (rawInput.length() > 0) {
+      rawInput = rawInput.toLowerCase();
+      command = rawInput.charAt(0);
+    }
+
+    return command;
+  }
+  private static Boolean executeCommand(Scanner scan, Character command) {
+    Boolean success = true;
+
+    switch (command) {
+      case 'q':
+        System.out.println("Thank you for using Chavvi Calc");
+        break;
+      default:
+        System.out.println("ERROR: Unknown commmand");
+        success = false;
+    }
+
+    return success;
+  }
     private static void printingmenu() {
         System.out.println("----------------------------------------------\n");
         System.out.println("Chavvi Calc\n");
