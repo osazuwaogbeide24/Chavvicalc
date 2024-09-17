@@ -67,6 +67,13 @@ private static Boolean executeCommand(Scanner scan, Character command) {
   
         }
         break;
+      case '+':
+        A+=B;
+        break;
+      case '-':
+        A-=B;
+        break;
+      
       case 'q':
         System.out.println("Thank you for using Chavvi Calc");
         break;
