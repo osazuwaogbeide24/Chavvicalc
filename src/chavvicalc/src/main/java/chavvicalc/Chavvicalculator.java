@@ -86,6 +86,10 @@ private static Boolean executeCommand(Scanner scan, Character command) {
             System.out.println("ERROR: Dividing by zero is invalid");
         }
         break;
+      case 'c':
+        A=0.0f;
+        B=0.0f;
+        break;   
       
       case 'q':
         System.out.println("Thank you for using Chavvi Calc");
