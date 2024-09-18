@@ -73,6 +73,19 @@ private static Boolean executeCommand(Scanner scan, Character command) {
       case '-':
         A-=B;
         break;
+      case '*':
+        A*=B;
+        break;
+
+      case '/':
+        if(B!=0){
+            A/=B;
+
+        }
+        else {
+            System.out.println("ERROR: Dividing by zero is invalid");
+        }
+        break;
       
       case 'q':
         System.out.println("Thank you for using Chavvi Calc");
