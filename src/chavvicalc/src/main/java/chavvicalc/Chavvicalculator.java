@@ -115,5 +115,6 @@ private static Boolean executeCommand(Scanner scan, Character command) {
         System.out.println("/\tDivide");
         System.out.println("c\tClear");
         System.out.println("q\tQuit");
+        System.out.println("----------------------------------------------\n");
     }
 }
