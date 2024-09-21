@@ -1,15 +1,10 @@
 package chavvicalc;
 import java.util.Scanner;
-import java.text.DecimalFormat;
-/**
- * Hello world!
- *
- */
+
 public class Chavvicalculator 
 {
-    private static float A= 0.0f;
-    private static float B= 0.0f;
-    private static DecimalFormat decf3 = new DecimalFormat("0.000");
+    private static float intA = 0.0f;
+    private static float intB = 0.0f;
     public static void main( String[] args )
     {
 
@@ -47,9 +42,9 @@ private static Boolean executeCommand(Scanner scan, Character command) {
     switch (command) {
       case 'a':
         System.out.printf("Enter a number:\t");
-        String xnc =scan.nextLine();
+        String xnc = scan.nextLine();
         try {
-            A=Float.parseFloat(xnc);
+            intA = Float.parseFloat(xnc);
         }
         catch(NumberFormatException e){
             System.out.println("ERROR: The value entered is not a floating point number");
@@ -58,9 +53,9 @@ private static Boolean executeCommand(Scanner scan, Character command) {
         break;
         case 'b':
         System.out.printf("Enter a number:\t");
-        String xnA =scan.nextLine();
+        String strB = scan.nextLine();
         try {
-            B=Float.parseFloat(xnA);
+            intB = Float.parseFloat(strB);
         }
         catch(NumberFormatException e){
             System.out.println("ERROR: The value entered is not a floating point number");
@@ -68,18 +63,18 @@ private static Boolean executeCommand(Scanner scan, Character command) {
         }
         break;
       case '+':
-        A+=B;
+        intA += intB;
         break;
       case '-':
-        A-=B;
+        intA -= intB;
         break;
       case '*':
-        A*=B;
+        intA *= intB;
         break;
 
       case '/':
-        if(B!=0){
-            A/=B;
+        if(intB != 0){
+            intA /= intB;
 
         }
         else {
@@ -87,8 +82,8 @@ private static Boolean executeCommand(Scanner scan, Character command) {
         }
         break;
       case 'c':
-        A=0.0f;
-        B=0.0f;
+        intA = 0.0f;
+        intB = 0.0f;
         break;   
       
       case 'q':
@@ -105,7 +100,7 @@ private static Boolean executeCommand(Scanner scan, Character command) {
         System.out.println("----------------------------------------------\n");
         System.out.println("Chavvi Calc\n");
         System.out.println("----------------------------------------------\n");
-        System.out.printf("A=%.3f\t\tB=%.3f\n", A,B);
+        System.out.printf("A=%.3f\t\tB=%.3f\n", intA,intB);
         System.out.println("----------------------------------------------\n");
         System.out.println("a\tEnter a value for A");
         System.out.println("b\tEnter a value for B");
